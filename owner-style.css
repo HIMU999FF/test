@@ -1,0 +1,96 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+.owner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    background-color: #007BFF;
+    padding: 20px;
+    width: 100%;
+    color: white;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.bio {
+    margin: 30px 0;
+}
+
+.bio h3 {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.bio p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    margin: 30px 0;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin: 10px 0;
+}
+
+.contact-info ul li a {
+    background-color: #008CBA;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info ul li a:hover {
+    background-color: #005f75;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #007BFF;
+    width: 100%;
+    color: white;
+}
