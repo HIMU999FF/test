@@ -25,7 +25,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             position: relative;
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 0.6s ease-out;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -38,7 +38,7 @@
             background: rgba(0, 0, 0, 0.5);
             border-radius: 15px 15px 0 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
 
         header:hover {
@@ -51,7 +51,7 @@
             border-radius: 50%;
             border: 5px solid rgba(255, 255, 255, 0.5);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            animation: pulse 2s infinite;
+            animation: pulse 1.5s infinite ease-in-out;
         }
 
         h2 {
@@ -73,16 +73,16 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: slideIn 0.8s ease forwards;
+            animation: slideIn 0.5s ease-out forwards;
             opacity: 0;
         }
 
         section.bio {
-            animation-delay: 0.2s;
+            animation-delay: 0.1s;
         }
 
         section.contact-info {
-            animation-delay: 0.4s;
+            animation-delay: 0.2s;
         }
 
         section h3 {
@@ -104,7 +104,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease-out;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
@@ -122,7 +122,7 @@
             height: 25px;
             margin-right: 8px;
             filter: brightness(0) invert(1);
-            transition: filter 0.3s ease;
+            transition: filter 0.2s ease;
         }
 
         .contact-info li:hover img {
@@ -152,7 +152,7 @@
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateX(-20px);
+                transform: translateX(-10px);
             }
             to {
                 opacity: 1;
@@ -165,7 +165,7 @@
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.05);
+                transform: scale(1.04);
             }
             100% {
                 transform: scale(1);
@@ -175,7 +175,7 @@
         /* RGB Animation */
         .rgb-text {
             display: inline-block;
-            animation: rgbAnimation 5s infinite alternate;
+            animation: rgbAnimation 3s infinite alternate;
         }
 
         @keyframes rgbAnimation {
@@ -203,7 +203,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.8s ease forwards;
+            animation: slideIn 0.5s ease-out forwards;
             opacity: 0;
         }
 
@@ -230,7 +230,7 @@
             color: white;
             font-size: 1em;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.2s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -285,103 +285,45 @@
 
         <section class="bio">
             <h3>About Me</h3>
-            <p>Hi, I'm Hîmú. I specialize in web development and love creating amazing digital experiences.</p>
-            <div class="extra-info">
-                <h4>Skills:</h4>
-                <p>HTML, CSS, JavaScript, React, Node.js</p>
-                <h4>Interests:</h4>
-                <p>Coding, Gaming, Music Production, and Hiking.</p>
-            </div>
+            <p>Hi, I'm Hîmu, a passionate web developer and designer with a knack for crafting engaging user experiences. I enjoy learning new technologies and pushing the boundaries of what's possible in web development.</p>
         </section>
 
         <section class="contact-info">
-            <h3>Contact Me</h3>
-            <div class="contact-grid">
+            <h3>Contact Information</h3>
+            <ul class="contact-grid">
                 <li>
-                    <img src="facebook-logo.png" alt="Facebook Logo">
-                    <a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank">FACEBOOK</a>
+                    <img src="phone-icon.png" alt="Phone">
+                    <span>+880123456789</span>
                 </li>
                 <li>
-                    <img src="whatsapp-logo.png" alt="WhatsApp Logo">
-                    <a href="https://wa.me/01332754898" target="_blank">WHATSAPP</a>
+                    <img src="email-icon.png" alt="Email">
+                    <span>example@mail.com</span>
                 </li>
                 <li>
-                    <img src="discord-logo.png" alt="Discord Logo">
-                    <a href="https://discord.gg/A2cqKYRe" target="_blank">DISCORD</a>
+                    <img src="location-icon.png" alt="Location">
+                    <span>Dhaka, Bangladesh</span>
                 </li>
                 <li>
-                    <img src="tiktok-logo.png" alt="TikTok Logo">
-                    <a href="https://www.tiktok.com/@amitiktokr.na?_t=8qd1CCvuAXI&_r=1" target="_blank">TIKTOK</a>
+                    <img src="website-icon.png" alt="Website">
+                    <span>www.mywebsite.com</span>
                 </li>
                 <li>
-                    <img src="telegram-logo.png" alt="Telegram Logo">
-                    <a href="https://t.me/hopeless_himu" target="_blank">TELEGRAM</a>
+                    <img src="facebook-icon.png" alt="Facebook">
+                    <span><a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank">Facebook Profile</a></span>
                 </li>
-                <li>
-                    <img src="instagram-logo.png" alt="Instagram Logo">
-                    <a href="https://www.instagram.com/himubby/profilecard/?igsh=cThlN3BtZm1sYzVw" target="_blank">INSTAGRAM</a>
-                </li>
-            </div>
+            </ul>
         </section>
 
         <section class="extra-info">
-            <h3>Favorite Quotes</h3>
-            <p>"The best way to predict the future is to create it."</p>
-            <p>"Success is not the key to happiness. Happiness is the key to success."</p>
-            <p>"Your time is limited, don't waste it living someone else's life."</p>
+            <h4>Fun Facts About Me:</h4>
+            <p>🚀 I've been coding for over 5 years.</p>
+            <p>🎸 I'm a huge fan of music and enjoy playing the guitar in my free time.</p>
+            <p>💡 I love solving complex problems and creating simple solutions.</p>
         </section>
 
         <footer>
-            <p>&copy; 2024 UPoL SAHA. All rights reserved.</p>
-            <button class="btn" onclick="window.location.href='mailto:your-email@example.com'">Email Me</button>
-            <button class="btn" onclick="window.open('https://www.linkedin.com/in/your-linkedin', '_blank')">LinkedIn Profile</button>
+            <p>&copy; 2024 Høpéléss Hîmú. All rights reserved.</p>
         </footer>
     </div>
-
-    <script>
-        // Simple effect to reveal sections one by one
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section, index) => {
-            section.style.opacity = 0;
-            section.style.animationDelay = `${index * 0.2}s`;
-            section.classList.add('fade-in');
-            setTimeout(() => {
-                section.style.opacity = 1;
-            }, index * 200);
-        });
-
-        // Back to top button functionality
-        const backToTopBtn = document.createElement('button');
-        backToTopBtn.innerHTML = 'Back to Top';
-        backToTopBtn.classList.add('btn');
-        backToTopBtn.style.position = 'fixed';
-        backToTopBtn.style.bottom = '20px';
-        backToTopBtn.style.right = '20px';
-        backToTopBtn.style.display = 'none';
-        document.body.appendChild(backToTopBtn);
-
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        };
-
-        backToTopBtn.onclick = function() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        };
-
-        backToTopBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
 </body>
 </html>
-        };
-
