@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="owner-style.css">
     <style>
         /* Reset and Global Styles */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2a2a72, #009ffd);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
+ body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+ }
 
         /* Owner Container */
         .owner-container {
@@ -104,13 +104,12 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             position: relative;
-            animation: rgbPulse 1.5s infinite alternate;
         }
 
         .contact-info li:hover {
@@ -170,24 +169,6 @@
             }
             100% {
                 transform: scale(1);
-            }
-        }
-
-        @keyframes rgbPulse {
-            0% {
-                background-color: rgba(255, 0, 60, 0.1);
-            }
-            25% {
-                background-color: rgba(255, 204, 0, 0.1);
-            }
-            50% {
-                background-color: rgba(51, 204, 255, 0.1);
-            }
-            75% {
-                background-color: rgba(0, 255, 132, 0.1);
-            }
-            100% {
-                background-color: rgba(255, 0, 247, 0.1);
             }
         }
 
@@ -294,50 +275,104 @@
         }
     </style>
 </head>
-<body><div class="owner-container">
+<body>
+    <div class="owner-container">
         <header>
-            <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
-            <h2 class="rgb-text">Redwan Ahemed</h2>
-            <p class="role">Bot Owner & Developer</p>
+            <img src="profile.jpg" alt="Owner Profile Image" class="profile-image">
+            <h2 class="rgb-text">Høpéléss Hîmú</h2>
+            <p class="role">Website Owner & Developer</p>
         </header>
 
         <section class="bio">
-            <h3>Bio</h3>
-            <p>Welcome to my introduction page! I'm a passionate developer dedicated to creating engaging experiences through technology. My interests lie in bot development and enhancing user interactions.</p>
+            <h3>About Me</h3>
+            <p>Hi, I'm Hîmú. I specialize in web development and love creating amazing digital experiences.</p>
+            <div class="extra-info">
+                <h4>Skills:</h4>
+                <p>HTML, CSS, JavaScript, React, Node.js</p>
+                <h4>Interests:</h4>
+                <p>Coding, Gaming, Music Production, and Hiking.</p>
+            </div>
         </section>
 
         <section class="contact-info">
-            <h3>Contact Information</h3>
+            <h3>Contact Me</h3>
             <div class="contact-grid">
                 <li>
-                    <img src="email-icon.png" alt="Email Icon">
-                    <span>Email: <a href="mailto:redwan@example.com" style="color: #00ccff;">redwan@example.com</a></span>
+                    <img src="facebook-logo.png" alt="Facebook Logo">
+                    <a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank">FACEBOOK</a>
                 </li>
                 <li>
-                    <img src="phone-icon.png" alt="Phone Icon">
-                    <span>Phone: <a href="tel:+8801234567890" style="color: #00ccff;">+88 012 345 67890</a></span>
+                    <img src="whatsapp-logo.png" alt="WhatsApp Logo">
+                    <a href="https://wa.me/01332754898" target="_blank">WHATSAPP</a>
                 </li>
                 <li>
-                    <img src="github-icon.png" alt="GitHub Icon">
-                    <span>GitHub: <a href="https://github.com/yourusername" style="color: #00ccff;">yourusername</a></span>
+                    <img src="discord-logo.png" alt="Discord Logo">
+                    <a href="https://discord.gg/A2cqKYRe" target="_blank">DISCORD</a>
                 </li>
                 <li>
-                    <img src="facebook-icon.png" alt="Facebook Icon">
-                    <span>Facebook: <a href="https://www.facebook.com/yourprofile" style="color: #00ccff;">yourprofile</a></span>
+                    <img src="tiktok-logo.png" alt="TikTok Logo">
+                    <a href="https://www.tiktok.com/@amitiktokr.na?_t=8qd1CCvuAXI&_r=1" target="_blank">TIKTOK</a>
+                </li>
+                <li>
+                    <img src="telegram-logo.png" alt="Telegram Logo">
+                    <a href="https://t.me/hopeless_himu" target="_blank">TELEGRAM</a>
+                </li>
+                <li>
+                    <img src="instagram-logo.png" alt="Instagram Logo">
+                    <a href="https://www.instagram.com/himubby/profilecard/?igsh=cThlN3BtZm1sYzVw" target="_blank">INSTAGRAM</a>
                 </li>
             </div>
         </section>
 
-        <div class="extra-info">
-            <h4>Fun Facts</h4>
-            <p>I enjoy music over movies, and I am always looking for innovative ideas to incorporate into my projects.</p>
-            <p>Feel free to reach out for collaboration or just to say hi!</p>
-        </div>
+        <section class="extra-info">
+            <h3>Favorite Quotes</h3>
+            <p>"The best way to predict the future is to create it."</p>
+            <p>"Success is not the key to happiness. Happiness is the key to success."</p>
+            <p>"Your time is limited, don't waste it living someone else's life."</p>
+        </section>
 
         <footer>
-            <p>&copy; 2024 Redwan Ahemed. All rights reserved.</p>
+            <p>&copy; 2024 Hopeless Himu. All rights reserved.</p>
+            <button class="btn" onclick="window.location.href='mailto: himuislam5935@gmail.com'">Email Me</button>
+            <button class="btn" onclick="window.open('https://www.linkedin.com/in/your-linkedin', '_blank')">LinkedIn Profile</button>
         </footer>
     </div>
+
+    <script>
+        // Simple effect to reveal sections one by one
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+            section.style.opacity = 0;
+            section.style.animationDelay = `${index * 0.2}s`;
+            section.classList.add('fade-in');
+            setTimeout(() => {
+                section.style.opacity = 1;
+            }, index * 200);
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = 'Back to Top';
+        backToTopBtn.classList.add('btn');
+        backToTopBtn.style.position = 'fixed';
+        backToTopBtn.style.bottom = '20px';
+        backToTopBtn.style.right = '20px';
+        backToTopBtn.style.display = 'none';
+        document.body.appendChild(backToTopBtn);
+
+        // Show the button when the user scrolls down 100px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
-    
