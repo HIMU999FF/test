@@ -364,91 +364,36 @@ footer .social-icons img:hover {
     .skills h3,
     .projects h3,
     .testimonials h3 {
-        font-size: 2rem;
+        font-size:2rem;
+    }
+
+    .skills ul li span {
+        padding: 8px 15px;
     }
 
     .projects ul li h4 {
         font-size: 1.5rem;
     }
 
-    footer {
-        padding: 15px 0;
+    .projects ul li p {
+        font-size: 0.9rem;
     }
 
-    footer .social-icons img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-/* Additional Styles for Dark Mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(135deg, #121212, #1e1e1e);
-        color: #e0e0e0;
-    }
-
-    header {
-        background: linear-gradient(45deg, #0056b3, #007BFF);
-    }
-
-    .bio {
-        background: rgba(255, 255, 255, 0.1);
-    }
-
-    .contact-info ul li a {
-        background-color: #005f75;
-    }
-
-    .skills ul li span {
-        background-color: #007BFF;
-    }
-
-    footer {
-        background-color: #0056b3;
-    }
-
-    footer .social-icons img {
-        filter: brightness(0.8);
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
+    .testimonials ul li p {
+        font-size: 0.9rem;
     }
 }
 
 /* Button Styles */
 .button {
-    display: inline-block;
     background-color: #007BFF;
     color: white;
-    padding: 12px 24px;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
@@ -456,209 +401,54 @@ footer .social-icons img:hover {
     transform: translateY(-2px);
 }
 
-/* Card Styles */
-.card {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
 /* Form Styles */
 form {
-    margin: 40px 0;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-form input[type="text"],
-form input[type="email"],
+form input,
 form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
     transition: border-color 0.3s;
 }
 
-form input[type="text"]:focus,
-form input[type="email"]:focus,
+form input:focus,
 form textarea:focus {
     border-color: #007BFF;
+    outline: none;
 }
 
 form button {
     background-color: #007BFF;
     color: white;
-    padding: 12px 20px;
     border: none;
     border-radius: 5px;
+    padding: 12px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 form button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-/* Additional Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mt-20 {
-    margin-top: 20px;
-}
-
-.mb-20 {
-    margin-bottom: 20px;
-}
-
-.p-20 {
-    padding: 20px;
-}
-
-.border {
-    border: 1px solid #ddd;
-}
-
-/* Media Queries for Mobile Devices */
-@media (max-width: 576px) {
-    .owner-container {
-        padding: 30px;
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    .role {
-        font-size: 1rem;
-    }
-
-    .bio h3,
-    .contact-info h3,
-    .skills h3,
-    .projects h3,
-    .testimonials h3 {
-        font-size: 1.5rem;
-    }
-
-    .bio p {
-        font-size: 0.9rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-
-/* Print Styles */
-@media print {
-    body {
-        background: none;
-        color: black;
-    }
-
-    header,
-    footer {
-        display: none;
-    }
-
-    .contact-info,
-    .bio,
-    .skills,
-    .projects,
-    .testimonials {
-        page-break-inside: avoid;
-    }
-
-    .button {
-        display: none;
-    }
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: none; /* Hidden by default */
-}
-
-.scroll-to-top:hover {
-    background-color: #0056b3;
-}
-
-/* Additional Styles for Accessibility */
-:focus {
-    outline: 2px dashed #007BFF;
-}
-
-/* Flexbox Centering Utility */
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Grid Styles */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-/* Card Hover Effect */
-.card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
-}
-
-/* Footer Links */
-footer a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #e0e0e0;
-}
-
-/* Hover Effect for Images */
-img {
-    transition: transform 0.3s;
-}
-
-img:hover {
-    transform: scale(1.05);
-}
-
-/* Miscellaneous Styles */
-h1 {
-    font-size: 3rem;
-    color: #333;
-}
-
-h4 {
-    font-size: 1.5rem;
-    color: #007BFF;
-}
-
-p {
-    line-height: 1.6;
-}
-
-/* Adding Comments for Clarity */
