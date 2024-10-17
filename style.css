@@ -58,51 +58,80 @@ body, html {
     position: relative;
     animation: fadeIn 1.5s ease forwards;
     opacity: 0;
+    transform: translateY(30px);
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
+    0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
 .intro-content h1 {
-    font-size: 3rem;  /* Reduced for mobile friendliness */
+    font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    0%, 100% {
+        text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff0055;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+    }
 }
 
 .intro-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 .open-btn {
     background-color: #008CBA;
-    padding: 12px 25px;  /* Adjusted size for mobile */
+    padding: 12px 25px;
     font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
     animation: pulseBtn 2.5s infinite ease-in-out;
 }
 
 .open-btn:hover {
     background-color: #005f75;
     box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+    transform: scale(1.1);
 }
 
-/* Button pulsing animation */
 @keyframes pulseBtn {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
+/* Floating animations for dynamic feel */
+.intro-container::before, .intro-container::after {
+    animation: floatBackground 10s ease-in-out infinite;
+}
+
+@keyframes floatBackground {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
 /* Media Queries for Mobile Optimization */
 @media (max-width: 768px) {
     .intro-content h1 {
-        font-size: 2.5rem;  /* Smaller font on mobile */
+        font-size: 2.5rem;
     }
 
     .intro-content p {
