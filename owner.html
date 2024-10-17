@@ -360,17 +360,19 @@
         backToTopBtn.style.display = 'none';
         document.body.appendChild(backToTopBtn);
 
+        // Show the button when the user scrolls down 100px
         window.onscroll = function() {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backTopBtn.style.display = (window.scrollY > 200) ? 'block' : 'none';
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
         };
 
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+        // Scroll to the top when the button is clicked
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
 </body>
 </html>
