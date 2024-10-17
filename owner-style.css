@@ -1,17 +1,28 @@
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    overflow: hidden; /* Prevents scrollbars for a cleaner look */
 }
+
 .owner-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 header {
@@ -19,6 +30,8 @@ header {
     padding: 20px;
     width: 100%;
     color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    position: relative;
 }
 
 .profile-image {
@@ -26,13 +39,19 @@ header {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow for profile image */
     margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 h2 {
     font-size: 2.5rem;
     margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
 }
 
 .role {
@@ -47,6 +66,21 @@ h2 {
 .bio h3 {
     font-size: 2rem;
     color: #007BFF;
+    position: relative;
+}
+
+.bio h3::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50px;
+    background: #007BFF; /* Underline effect */
+    margin: 10px auto;
+    transition: width 0.4s ease; /* Smooth width transition */
+}
+
+.bio h3:hover::after {
+    width: 70px; /* Expands underline on hover */
 }
 
 .bio p {
@@ -54,6 +88,7 @@ h2 {
     color: #555;
     max-width: 600px;
     margin: 0 auto;
+    line-height: 1.6; /* Improved readability */
 }
 
 .contact-info {
@@ -72,6 +107,15 @@ h2 {
 
 .contact-info ul li {
     margin: 10px 0;
+    display: flex;
+    align-items: center; /* Center icons and text */
+}
+
+.contact-info img {
+    width: 30px; /* Slightly larger icons */
+    height: 30px;
+    margin-right: 10px; /* Space between icon and text */
+    transition: transform 0.3s; /* Smooth icon scaling */
 }
 
 .contact-info ul li a {
@@ -80,11 +124,12 @@ h2 {
     color: white;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s; /* Smooth transition */
 }
 
 .contact-info ul li a:hover {
     background-color: #005f75;
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 footer {
@@ -93,4 +138,18 @@ footer {
     background-color: #007BFF;
     width: 100%;
     color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Shadow for footer depth */
+    position: relative;
+    animation: slideIn 1s ease-in-out; /* Slide-in footer animation */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
