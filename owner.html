@@ -25,7 +25,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             position: relative;
-            animation: fadeIn 1s ease-in, rgbGlow 1.5s infinite alternate;
+            animation: fadeIn 1s ease-in;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -39,7 +39,6 @@
             border-radius: 15px 15px 0 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             transition: background 0.3s;
-            animation: headerSlideIn 1s ease-in;
         }
 
         header:hover {
@@ -74,7 +73,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: slideIn 0.8s ease forwards, rgbGlow 2s infinite alternate;
+            animation: slideIn 0.8s ease forwards;
             opacity: 0;
         }
 
@@ -92,7 +91,6 @@
             position: relative;
             color: #00ff99;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            animation: rgbAnimation 3s infinite alternate; /* Added RGB animation */
         }
 
         /* Contact Information Styles */
@@ -106,14 +104,31 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             position: relative;
-            animation: bounceIn 0.8s forwards;
-            opacity: 0;
+            animation: rgbGlow 1.5s infinite alternate;
+        }
+
+        @keyframes rgbGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+            }
+            25% {
+                box-shadow: 0 0 10px rgba(255, 255, 0, 0.5), 0 0 20px rgba(255, 255, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.5);
+            }
+            75% {
+                box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 0, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+            }
         }
 
         .contact-info li:hover {
@@ -246,6 +261,7 @@
         @media (max-width: 600px) {
             .owner-container {
                 width: 90%;
+                padding: 15px;
             }
 
             .profile-image {
@@ -257,59 +273,21 @@
                 font-size: 2em;
             }
 
-            .role {
-                font-size: 1.2em;
-            }
-
             section h3 {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
 
-            .contact-info li {
-                flex-direction: column;
-                align-items: flex-start;
+            .contact-info li img {
+                width: 20px;
+                height: 20px;
             }
-        }
 
-        /* Grid Layout for Contact Info */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-        }
+            .btn {
+                font-size: 0.9em;
+            }
 
-        /* Additional Animations */
-        @keyframes bounceIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes headerSlideIn {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes rgbGlow {
-            0% {
-                box-shadow: 0 0 20px #ff003c;
-            }
-            50% {
-                box-shadow: 0 0 30px #33ccff;
-            }
-            100% {
-                box-shadow: 0 0 20px #ff003c;
+            .extra-info h4 {
+                font-size: 1.3em;
             }
         }
     </style>
@@ -319,49 +297,62 @@
         <header>
             <img src="your-profile-image.jpg" alt="Profile Image" class="profile-image">
             <h2>Redwan Ahemed</h2>
-            <p class="role">Bot Developer & Owner</p>
+            <p class="role">Developer | Creator</p>
         </header>
-        
+
         <section class="bio">
-            <h3>Biography</h3>
-            <p>Hello! I'm Redwan Ahemed, also known as devastatinglordxemon. I'm passionate about coding and creating engaging bots for various platforms. My journey in development has been exciting, and I love sharing knowledge with others.</p>
+            <h3>Bio</h3>
+            <p>Passionate about technology and programming, always eager to learn new skills and improve my work.</p>
         </section>
 
         <section class="contact-info">
             <h3>Contact Information</h3>
-            <div class="contact-grid">
-                <li>
-                    <img src="facebook-icon.png" alt="Facebook Icon">
-                    <span><a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" style="color: #00ff99;">Facebook</a></span>
-                </li>
-                <li>
-                    <img src="github-icon.png" alt="GitHub Icon">
-                    <span><a href="https://github.com/yourusername" style="color: #00ff99;">GitHub</a></span>
-                </li>
-                <li>
-                    <img src="twitter-icon.png" alt="Twitter Icon">
-                    <span><a href="https://twitter.com/yourusername" style="color: #00ff99;">Twitter</a></span>
-                </li>
-                <li>
-                    <img src="email-icon.png" alt="Email Icon">
-                    <span><a href="mailto:youremail@example.com" style="color: #00ff99;">Email</a></span>
-                </li>
-            </div>
+            <ul>
+                <li><img src="phone-icon.png" alt="Phone"> +880 123 456 789</li>
+                <li><img src="email-icon.png" alt="Email"> redwan@example.com</li>
+                <li><img src="linkedin-icon.png" alt="LinkedIn"> <a href="https://linkedin.com/in/redwan-ahemed">LinkedIn Profile</a></li>
+            </ul>
         </section>
 
-        <div class="extra-info">
-            <h4>Fun Facts</h4>
-            <p>I was born on February 24.</p>
-            <p>I prefer music over movies.</p>
-            <p>I've experienced some interesting moments, including street fights.</p>
-        </div>
+        <section class="extra-info">
+            <h4>Extra Information</h4>
+            <p>Hobbies: Coding, Music, Reading</p>
+            <p>Favorite Drink: Magic</p>
+            <p>Birthday: February 24</p>
+        </section>
 
+        <button class="btn" onclick="alert('Thank you for visiting!')">Say Hello!</button>
+        
         <footer>
-            <p>&copy; 2024 Redwan Ahemed. All rights reserved.</p>
-            <button class="btn" onclick="window.location.href='contact.html';">Contact Me</button>
+            <p>&copy; 2024 Redwan Ahemed</p>
         </footer>
     </div>
+
+    <script>
+        // Back to top button functionality
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = 'Back to Top';
+        backToTopBtn.classList.add('btn');
+        backToTopBtn.style.position = 'fixed';
+        backToTopBtn.style.bottom = '20px';
+        backToTopBtn.style.right = '20px';
+        backToTopBtn.style.display = 'none';
+        document.body.appendChild(backToTopBtn);
+
+        // Show the button when scrolled down
+        window.onscroll = function() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+
+        // Scroll to top on button click
+        backToTopBtn.onclick = function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        };
+    </script>
 </body>
 </html>
-
-
