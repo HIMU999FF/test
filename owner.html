@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="owner-style.css">
     <style>
         /* Reset and Global Styles */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2a2a72, #009ffd);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
+ body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2a2a72, #009ffd);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+ }
 
         /* Owner Container */
         .owner-container {
@@ -104,13 +104,12 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             position: relative;
-            overflow: hidden; /* For RGB animation */
         }
 
         .contact-info li:hover {
@@ -128,21 +127,6 @@
 
         .contact-info li:hover img {
             filter: brightness(1.2) invert(1);
-        }
-
-        /* RGB Lighting Effect */
-        .rgb-light {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none; /* Allow interaction with the list item */
-            background: linear-gradient(45deg, #ff003c, #ffcc00, #33ccff, #00ff84, #ff00f7);
-            background-size: 400% 400%;
-            animation: rgbShift 5s linear infinite;
-            opacity: 0.2; /* Adjust opacity for a subtle effect */
-            border-radius: 5px; /* Match the li border radius */
         }
 
         /* Footer Styles */
@@ -188,12 +172,27 @@
             }
         }
 
-        @keyframes rgbShift {
+        /* RGB Animation */
+        .rgb-text {
+            display: inline-block;
+            animation: rgbAnimation 5s infinite alternate;
+        }
+
+        @keyframes rgbAnimation {
             0% {
-                background-position: 0% 50%;
+                color: #ff003c;
+            }
+            25% {
+                color: #ffcc00;
+            }
+            50% {
+                color: #33ccff;
+            }
+            75% {
+                color: #00ff84;
             }
             100% {
-                background-position: 100% 50%;
+                color: #ff00f7;
             }
         }
 
@@ -285,46 +284,95 @@
         </header>
 
         <section class="bio">
-            <h3>Biography</h3>
-            <p>
-                I am a passionate web developer with a love for creating unique and engaging web experiences. 
-                My journey started with coding in high school, and since then, I've dedicated my career to building 
-                websites that not only function well but also tell a story. When I'm not coding, I enjoy exploring new 
-                technologies and spending time with my friends and family.
-            </p>
+            <h3>About Me</h3>
+            <p>Hi, I'm Hîmú. I specialize in web development and love creating amazing digital experiences.</p>
+            <div class="extra-info">
+                <h4>Skills:</h4>
+                <p>HTML, CSS, JavaScript, React, Node.js</p>
+                <h4>Interests:</h4>
+                <p>Coding, Gaming, Music Production, and Hiking.</p>
+            </div>
         </section>
 
         <section class="contact-info">
-            <h3>Contact Information</h3>
+            <h3>Contact Me</h3>
             <div class="contact-grid">
                 <li>
-                    <img src="email-icon.png" alt="Email Icon">
-                    <span>Email: <a href="mailto:example@example.com" style="color: #00ff99;">example@example.com</a></span>
+                    <img src="facebook-logo.png" alt="Facebook Logo">
+                    <a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank">FACEBOOK</a>
                 </li>
                 <li>
-                    <img src="phone-icon.png" alt="Phone Icon">
-                    <span>Phone: <a href="tel:+1234567890" style="color: #00ff99;">+1234567890</a></span>
+                    <img src="whatsapp-logo.png" alt="WhatsApp Logo">
+                    <a href="https://wa.me/01332754898" target="_blank">WHATSAPP</a>
                 </li>
                 <li>
-                    <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                    <span>LinkedIn: <a href="https://www.linkedin.com/in/username" style="color: #00ff99;">/in/username</a></span>
+                    <img src="discord-logo.png" alt="Discord Logo">
+                    <a href="https://discord.gg/A2cqKYRe" target="_blank">DISCORD</a>
                 </li>
                 <li>
-                    <img src="github-icon.png" alt="GitHub Icon">
-                    <span>GitHub: <a href="https://github.com/username" style="color: #00ff99;">@username</a></span>
+                    <img src="tiktok-logo.png" alt="TikTok Logo">
+                    <a href="https://www.tiktok.com/@amitiktokr.na?_t=8qd1CCvuAXI&_r=1" target="_blank">TIKTOK</a>
+                </li>
+                <li>
+                    <img src="https://i.ibb.co/9W36fJb/image.jpg" alt="Telegram Logo">
+                    <a href="https://t.me/hopeless_himu" target="_blank">TELEGRAM</a>
+                </li>
+                <li>
+                    <img src="instagram-logo.png" alt="Instagram Logo">
+                    <a href="https://www.instagram.com/himubby/profilecard/?igsh=cThlN3BtZm1sYzVw" target="_blank">INSTAGRAM</a>
                 </li>
             </div>
         </section>
 
-        <div class="extra-info">
-            <h4>Additional Information</h4>
-            <p>I love collaborating on open-source projects and contributing to community-driven initiatives. If you have a project in mind, feel free to reach out!</p>
-            <button class="btn">Get in Touch</button>
-        </div>
+        <section class="extra-info">
+            <h3>Favorite Quotes</h3>
+            <p>"The best way to predict the future is to create it."</p>
+            <p>"Success is not the key to happiness. Happiness is the key to success."</p>
+            <p>"Your time is limited, don't waste it living someone else's life."</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 UPoL SAHA. All rights reserved.</p>
+            <button class="btn" onclick="window.location.href='mailto:your-email@example.com'">Email Me</button>
+            <button class="btn" onclick="window.open('https://www.linkedin.com/in/your-linkedin', '_blank')">LinkedIn Profile</button>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Høpéléss Hîmú. All Rights Reserved.</p>
-    </footer>
+    <script>
+        // Simple effect to reveal sections one by one
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+            section.style.opacity = 0;
+            section.style.animationDelay = `${index * 0.2}s`;
+            section.classList.add('fade-in');
+            setTimeout(() => {
+                section.style.opacity = 1;
+            }, index * 200);
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = 'Back to Top';
+        backToTopBtn.classList.add('btn');
+        backToTopBtn.style.position = 'fixed';
+        backToTopBtn.style.bottom = '20px';
+        backToTopBtn.style.right = '20px';
+        backToTopBtn.style.display = 'none';
+        document.body.appendChild(backToTopBtn);
+
+        // Show the button when the user scrolls down 100px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
 </body>
 </html>
