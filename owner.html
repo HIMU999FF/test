@@ -110,8 +110,7 @@
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             position: relative;
-            overflow: hidden;
-            animation: rgbGlow 1s infinite alternate;
+            overflow: hidden; /* For RGB animation */
         }
 
         .contact-info li:hover {
@@ -129,6 +128,21 @@
 
         .contact-info li:hover img {
             filter: brightness(1.2) invert(1);
+        }
+
+        /* RGB Lighting Effect */
+        .rgb-light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* Allow interaction with the list item */
+            background: linear-gradient(45deg, #ff003c, #ffcc00, #33ccff, #00ff84, #ff00f7);
+            background-size: 400% 400%;
+            animation: rgbShift 5s linear infinite;
+            opacity: 0.2; /* Adjust opacity for a subtle effect */
+            border-radius: 5px; /* Match the li border radius */
         }
 
         /* Footer Styles */
@@ -174,46 +188,12 @@
             }
         }
 
-        /* RGB Animation */
-        .rgb-text {
-            display: inline-block;
-            animation: rgbAnimation 5s infinite alternate;
-        }
-
-        @keyframes rgbAnimation {
+        @keyframes rgbShift {
             0% {
-                color: #ff003c;
-            }
-            25% {
-                color: #ffcc00;
-            }
-            50% {
-                color: #33ccff;
-            }
-            75% {
-                color: #00ff84;
+                background-position: 0% 50%;
             }
             100% {
-                color: #ff00f7;
-            }
-        }
-
-        /* RGB Glow Animation for Contact Lighting */
-        @keyframes rgbGlow {
-            0% {
-                background: rgba(255, 0, 0, 0.1);
-            }
-            25% {
-                background: rgba(0, 255, 0, 0.1);
-            }
-            50% {
-                background: rgba(0, 0, 255, 0.1);
-            }
-            75% {
-                background: rgba(255, 0, 255, 0.1);
-            }
-            100% {
-                background: rgba(255, 255, 0, 0.1);
+                background-position: 100% 50%;
             }
         }
 
@@ -292,95 +272,59 @@
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;}
-
-        /* Back to Top Button Styles */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background: #ffcc00;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            font-size: 1em;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s;
-        }
-
-        .back-to-top:hover {
-            background: #e6b800;
+            gap: 15px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-image">
-        <h2 class="rgb-text">Redwan Ahemed</h2>
-        <p class="role">Developer & Bot Owner</p>
-    </header>
-
     <div class="owner-container">
+        <header>
+            <img src="profile.jpg" alt="Owner Profile Image" class="profile-image">
+            <h2 class="rgb-text">Høpéléss Hîmú</h2>
+            <p class="role">Website Owner & Developer</p>
+        </header>
+
         <section class="bio">
             <h3>Biography</h3>
-            <p>Welcome to my personal page! I am a passionate developer with a love for creating engaging bots and applications.</p>
+            <p>
+                I am a passionate web developer with a love for creating unique and engaging web experiences. 
+                My journey started with coding in high school, and since then, I've dedicated my career to building 
+                websites that not only function well but also tell a story. When I'm not coding, I enjoy exploring new 
+                technologies and spending time with my friends and family.
+            </p>
         </section>
 
         <section class="contact-info">
             <h3>Contact Information</h3>
-            <ul class="contact-grid">
+            <div class="contact-grid">
                 <li>
-                    <img src="email-icon.png" alt="Email">
-                    <span>Email: redwan@example.com</span>
+                    <img src="email-icon.png" alt="Email Icon">
+                    <span>Email: <a href="mailto:example@example.com" style="color: #00ff99;">example@example.com</a></span>
                 </li>
                 <li>
-                    <img src="github-icon.png" alt="GitHub">
-                    <span>GitHub: github.com/redwan</span>
+                    <img src="phone-icon.png" alt="Phone Icon">
+                    <span>Phone: <a href="tel:+1234567890" style="color: #00ff99;">+1234567890</a></span>
                 </li>
                 <li>
-                    <img src="linkedin-icon.png" alt="LinkedIn">
-                    <span>LinkedIn: linkedin.com/in/redwan</span>
+                    <img src="linkedin-icon.png" alt="LinkedIn Icon">
+                    <span>LinkedIn: <a href="https://www.linkedin.com/in/username" style="color: #00ff99;">/in/username</a></span>
                 </li>
                 <li>
-                    <img src="facebook-icon.png" alt="Facebook">
-                    <span>Facebook: facebook.com/redwan</span>
+                    <img src="github-icon.png" alt="GitHub Icon">
+                    <span>GitHub: <a href="https://github.com/username" style="color: #00ff99;">@username</a></span>
                 </li>
-            </ul>
+            </div>
         </section>
 
-        <section class="extra-info">
+        <div class="extra-info">
             <h4>Additional Information</h4>
-            <p>Feel free to reach out for collaborations or inquiries.</p>
-        </section>
-
-        <button class="btn">Get in Touch</button>
+            <p>I love collaborating on open-source projects and contributing to community-driven initiatives. If you have a project in mind, feel free to reach out!</p>
+            <button class="btn">Get in Touch</button>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Redwan Ahemed. All rights reserved.</p>
+        <p>&copy; 2024 Høpéléss Hîmú. All Rights Reserved.</p>
     </footer>
-
-    <button class="back-to-top">Back to Top</button>
-
-    <script>
-        // Back to Top Button Functionality
-        const backToTopBtn = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        });
-    </script>
 </body>
 </html>
