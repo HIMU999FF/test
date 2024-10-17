@@ -23,8 +23,8 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(60deg, rgba(255,0,150,0.3), rgba(0,204,255,0.3));
-    animation: moveBackground 6s infinite alternate;
+    background: linear-gradient(60deg, rgba(255,0,150,0.2), rgba(0,204,255,0.2));
+    animation: moveBackground 8s infinite alternate ease-in-out;
 }
 
 @keyframes moveBackground {
@@ -32,7 +32,7 @@ body, html {
     100% { background-position: 100% 50%; }
 }
 
-/* RGB Animation on background */
+/* Lighter RGB Animation */
 .intro-container::after {
     content: '';
     position: absolute;
@@ -40,17 +40,15 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
-    background-size: 400% 400%;
-    mix-blend-mode: screen;
-    opacity: 0.2;
-    animation: rgbBackground 10s ease infinite;
+    background: linear-gradient(45deg, red, blue);
+    background-size: 200% 200%;
+    opacity: 0.1;
+    animation: rgbBackground 12s ease infinite;
 }
 
 @keyframes rgbBackground {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .intro-content {
@@ -58,52 +56,61 @@ body, html {
     color: white;
     z-index: 1;
     position: relative;
-    animation: fadeIn 2s ease forwards;
+    animation: fadeIn 1.5s ease forwards;
     opacity: 0;
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
+    0% { opacity: 0; transform: translateY(10px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
 .intro-content h1 {
-    font-size: 4rem;
+    font-size: 3rem;  /* Reduced for mobile friendliness */
     margin-bottom: 20px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    animation: glowText 3s ease-in-out infinite alternate;
-}
-
-@keyframes glowText {
-    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff9900, 0 0 30px #ff9900, 0 0 40px #ff9900; }
-    100% { text-shadow: 0 0 20px #00ccff, 0 0 30px #00ccff, 0 0 40px #00ccff, 0 0 50px #00ccff; }
 }
 
 .intro-content p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    animation: glowText 5s ease-in-out infinite alternate;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .open-btn {
     background-color: #008CBA;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 12px 25px;  /* Adjusted size for mobile */
+    font-size: 1.1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    animation: pulseBtn 2s infinite;
+    animation: pulseBtn 2.5s infinite ease-in-out;
 }
 
 .open-btn:hover {
     background-color: #005f75;
-    box-shadow: 0 0 15px #00ccff, 0 0 25px #00ccff, 0 0 35px #00ccff;
+    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
 }
 
 /* Button pulsing animation */
 @keyframes pulseBtn {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+/* Media Queries for Mobile Optimization */
+@media (max-width: 768px) {
+    .intro-content h1 {
+        font-size: 2.5rem;  /* Smaller font on mobile */
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+    }
+
+    .open-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 }
