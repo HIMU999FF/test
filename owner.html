@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="owner-style.css">
     <style>
         /* Reset and Global Styles */
- body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #2a2a72, #009ffd);
-    color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
- }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
 
         /* Owner Container */
         .owner-container {
@@ -25,7 +25,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             position: relative;
-            animation: fadeIn 1s ease-in;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -73,8 +72,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: slideIn 0.8s ease forwards;
-            opacity: 0;
+            opacity: 1; /* Remove animation effect */
         }
 
         section.bio {
@@ -149,17 +147,6 @@
             }
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -203,8 +190,7 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.8s ease forwards;
-            opacity: 0;
+            opacity: 1; /* Keep extra info visible */
         }
 
         .extra-info p {
@@ -298,81 +284,31 @@
             <h3>Contact Me</h3>
             <div class="contact-grid">
                 <li>
-                    <img src="https://i.postimg.cc/nztLHj0B/Picsart-24-10-18-04-59-18-561.png" alt="Facebook Logo">
-                    <a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank">FACEBOOK</a>
+                    <img src="facebook-logo.png" alt="Facebook Logo">
+                    <a href="https://www.facebook.com/99.6T9.HIMU.6T9.1" target="_blank">Facebook</a>
                 </li>
                 <li>
-                    <img src="whatsapp-logo.png" alt="WhatsApp Logo">
-                    <a href="https://wa.me/01332754898" target="_blank">WHATSAPP</a>
+                    <img src="twitter-logo.png" alt="Twitter Logo">
+                    <a href="https://twitter.com/your_twitter_handle" target="_blank">Twitter</a>
                 </li>
                 <li>
-                    <img src="discord-logo.png" alt="Discord Logo">
-                    <a href="https://discord.gg/A2cqKYRe" target="_blank">DISCORD</a>
+                    <img src="linkedin-logo.png" alt="LinkedIn Logo">
+                    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
                 </li>
                 <li>
-                    <img src="tiktok-logo.png" alt="TikTok Logo">
-                    <a href="https://www.tiktok.com/@amitiktokr.na?_t=8qd1CCvuAXI&_r=1" target="_blank">TIKTOK</a>
+                    <img src="github-logo.png" alt="GitHub Logo">
+                    <a href="https://github.com/your_github_username" target="_blank">GitHub</a>
                 </li>
                 <li>
-                    <img src="https://i.ibb.co/9W36fJb/image.jpg" alt="Telegram Logo">
-                    <a href="https://t.me/hopeless_himu" target="_blank">TELEGRAM</a>
-                </li>
-                <li>
-                    <img src="instagram-logo.png" alt="Instagram Logo">
-                    <a href="https://www.instagram.com/himubby/profilecard/?igsh=cThlN3BtZm1sYzVw" target="_blank">INSTAGRAM</a>
+                    <img src="email-logo.png" alt="Email Logo">
+                    <a href="mailto:your_email@example.com">Email</a>
                 </li>
             </div>
         </section>
 
-        <section class="extra-info">
-            <h3>Favorite Quotes</h3>
-            <p>"The best way to predict the future is to create it."</p>
-            <p>"Success is not the key to happiness. Happiness is the key to success."</p>
-            <p>"Your time is limited, don't waste it living someone else's life."</p>
-        </section>
-
         <footer>
-            <p>&copy; 2024 UPoL SAHA. All rights reserved.</p>
-            <button class="btn" onclick="window.location.href='mailto:your-email@example.com'">Email Me</button>
-            <button class="btn" onclick="window.open('https://www.linkedin.com/in/your-linkedin', '_blank')">LinkedIn Profile</button>
+            <p>&copy; 2024 Hîmú. All Rights Reserved.</p>
         </footer>
     </div>
-
-    <script>
-        // Simple effect to reveal sections one by one
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section, index) => {
-            section.style.opacity = 0;
-            section.style.animationDelay = `${index * 0.2}s`;
-            section.classList.add('fade-in');
-            setTimeout(() => {
-                section.style.opacity = 1;
-            }, index * 200);
-        });
-
-        // Back to top button functionality
-        const backToTopBtn = document.createElement('button');
-        backToTopBtn.innerHTML = 'Back to Top';
-        backToTopBtn.classList.add('btn');
-        backToTopBtn.style.position = 'fixed';
-        backToTopBtn.style.bottom = '20px';
-        backToTopBtn.style.right = '20px';
-        backToTopBtn.style.display = 'none';
-        document.body.appendChild(backToTopBtn);
-
-        // Show the button when the user scrolls down 100px
-        window.onscroll = function() {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopBtn.style.display = 'block';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        };
-
-        // Scroll to the top when the button is clicked
-        backToTopBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    </script>
 </body>
 </html>
