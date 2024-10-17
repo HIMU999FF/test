@@ -273,231 +273,81 @@
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 15px;
         }
+    </style>
+</head>
+<body>
+    <div class="owner-container">
+        <header>
+            <img src="profile.jpg" alt="Owner Profile Image" class="profile-image">
+            <h2 class="rgb-text">Høpéléss Hîmú</h2>
+            <p class="role">Website Owner & Developer</p>
+        </header>
 
-        /* Back to Top Button */
-        #backToTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffcc00;
-            color: #000;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
+        <section class="bio">
+            <h3>About Me</h3>
+            <p>Hi, I'm Hîmú. I specialize in web development and love creating amazing digital experiences.</p>
+            <div class="extra-info">
+               <h4>Fun Facts</h4>
+                <p>🌟 I enjoy coding challenges.</p>
+                <p>🎮 I love playing video games.</p>
+                <p>✈️ Traveling is my passion.</p>
+            </div>
+        </section>
 
-        #backToTopBtn:hover {
-            background-color: #ff9900;
-        }
+        <section class="contact-info">
+            <h3>Contact Information</h3>
+            <div class="contact-grid">
+                <li>
+                    <img src="phone-icon.png" alt="Phone Icon">
+                    <span>+1234567890</span>
+                </li>
+                <li>
+                    <img src="email-icon.png" alt="Email Icon">
+                    <span>example@email.com</span>
+                </li>
+                <li>
+                    <img src="github-icon.png" alt="GitHub Icon">
+                    <span><a href="https://github.com/example" style="color: #ffffff;">GitHub</a></span>
+                </li>
+                <li>
+                    <img src="linkedin-icon.png" alt="LinkedIn Icon">
+                    <span><a href="https://linkedin.com/in/example" style="color: #ffffff;">LinkedIn</a></span>
+                </li>
+            </div>
+        </section>
+    </div>
 
-        /* Additional Paragraphs to Extend Content */
-        .extra-content {
-            margin: 20px 0;
-        }
+    <footer>
+        <p>&copy; 2024 Hîmú. All rights reserved.</p>
+    </footer>
 
-        .extra-content p {backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    <script>
+        // Back to Top Button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.textContent = '↑ Back to Top';
+        backToTopBtn.style.position = 'fixed';
+        backToTopBtn.style.bottom = '20px';
+        backToTopBtn.style.right = '20px';
+        backToTopBtn.style.padding = '10px 15px';
+        backToTopBtn.style.background = '#00ccff';
+        backToTopBtn.style.color = '#ffffff';
+        backToTopBtn.style.border = 'none';
+        backToTopBtn.style.borderRadius = '5px';
+        backToTopBtn.style.display = 'none'; // Initially hidden
+        document.body.appendChild(backToTopBtn);
 
-        // Show the back to top button when scrolling down
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 backToTopBtn.style.display = 'block';
             } else {
                 backToTopBtn.style.display = 'none';
             }
-        });
+        };
 
-        // Dynamic year in footer
-        const yearElement = document.createElement('span');
-        yearElement.textContent = new Date().getFullYear();
-        footer.insertBefore(yearElement, footer.firstChild);
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
-
-    <script>
-        // Smooth scrolling for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Image Carousel Functionality
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-image');
-        const totalImages = images.length;
-
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.style.display = (i === index) ? 'block' : 'none';
-            });
-        }
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % totalImages;
-            showImage(currentIndex);
-        }
-
-        function previousImage() {
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-            showImage(currentIndex);
-        }
-
-        document.querySelector('.next-btn').addEventListener('click', nextImage);
-        document.querySelector('.prev-btn').addEventListener('click', previousImage);
-
-        // Show first image
-        showImage(currentIndex);
-    </script>
-
-    <style>
-        /* Carousel Styles */
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .carousel-image {
-            display: none; /* Hide images by default */
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .carousel .next-btn, .carousel .prev-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .carousel .next-btn:hover, .carousel .prev-btn:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .carousel .next-btn {
-            right: 10px;
-        }
-
-        .carousel .prev-btn {
-            left: 10px;
-        }
-    </style>
-
-    <div class="carousel">
-        <img src="image1.jpg" alt="Image 1" class="carousel-image">
-        <img src="image2.jpg" alt="Image 2" class="carousel-image">
-        <img src="image3.jpg" alt="Image 3" class="carousel-image">
-        <button class="prev-btn">&lt;</button>
-        <button class="next-btn">&gt;</button>
-    </div>
-
-    <section>
-        <h3>My Projects</h3>
-        <ul class="projects-list">
-            <li>
-                <h4>Project A</h4>
-                <p>A brief description of Project A.</p>
-                <a href="https://link-to-project-a.com" target="_blank">View Project</a>
-            </li>
-            <li>
-                <h4>Project B</h4>
-                <p>A brief description of Project B.</p>
-                <a href="https://link-to-project-b.com" target="_blank">View Project</a>
-            </li>
-            <li>
-                <h4>Project C</h4>
-                <p>A brief description of Project C.</p>
-                <a href="https://link-to-project-c.com" target="_blank">View Project</a>
-            </li>
-        </ul>
-    </section>
-
-    <style>
-        /* Project List Styles */
-        .projects-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .projects-list li {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .projects-list h4 {
-            margin: 0;
-            color: #00ff99;
-        }
-
-        .projects-list a {
-            color: #00ccff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .projects-list a:hover {
-            color: #0099cc;
-        }
-    </style>
-
-    <section>
-        <h3>Upcoming Events</h3>
-        <div class="events">
-            <div class="event">
-                <h4>Event A</h4>
-                <p>Date: March 10, 2024</p>
-                <p>Location: Online</p>
-                <p>Description: Join us for a discussion on the future of web development.</p>
-            </div>
-            <div class="event">
-                <h4>Event B</h4>
-                <p>Date: April 5, 2024</p>
-                <p>Location: Local Community Center</p>
-                <p>Description: Networking event for developers and tech enthusiasts.</p>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        /* Event Styles */
-        .events {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .event {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .event h4 {
-            color: #00ff99;
-            margin: 0;
-        }
-    </style>
 </body>
-</html>
+</html> 
+                    
