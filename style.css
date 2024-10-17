@@ -1,11 +1,14 @@
+/* Basic Reset */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     height: 100%;
     overflow: hidden;
+    background-color: #000; /* For smoother transition during loading */
 }
 
+/* Intro Container */
 .intro-container {
     display: flex;
     justify-content: center;
@@ -16,6 +19,7 @@ body, html {
     overflow: hidden;
 }
 
+/* Animated gradient overlay */
 .intro-container::before {
     content: '';
     position: absolute;
@@ -24,7 +28,7 @@ body, html {
     right: 0;
     bottom: 0;
     background: linear-gradient(60deg, rgba(255,0,150,0.2), rgba(0,204,255,0.2));
-    animation: moveBackground 8s infinite alternate ease-in-out;
+    animation: moveBackground 10s infinite alternate ease-in-out;
 }
 
 @keyframes moveBackground {
@@ -32,7 +36,7 @@ body, html {
     100% { background-position: 100% 50%; }
 }
 
-/* Lighter RGB Animation */
+/* RGB color animation overlay */
 .intro-container::after {
     content: '';
     position: absolute;
@@ -40,17 +44,18 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, red, blue);
-    background-size: 200% 200%;
-    opacity: 0.1;
-    animation: rgbBackground 12s ease infinite;
+    background: linear-gradient(45deg, red, blue, green, purple);
+    background-size: 400% 400%;
+    opacity: 0.15;
+    animation: rgbFlow 8s infinite linear;
 }
 
-@keyframes rgbBackground {
+@keyframes rgbFlow {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
+/* Smooth Fade-In for Content */
 .intro-content {
     text-align: center;
     color: white;
@@ -66,72 +71,77 @@ body, html {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Glowing Animated Title */
 .intro-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 10px rgba(255, 0, 150, 0.7), 0 0 20px rgba(0, 204, 255, 0.7);
     animation: glowText 3s ease-in-out infinite;
 }
 
 @keyframes glowText {
     0%, 100% {
-        text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff0055;
+        text-shadow: 0 0 20px #ff0055, 0 0 40px #ff0055, 0 0 60px #ff0055;
     }
     50% {
-        text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+        text-shadow: 0 0 30px #00ffcc, 0 0 50px #00ffcc, 0 0 70px #00ffcc;
     }
 }
 
+/* Text animation - slight parallax feel */
 .intro-content p {
     font-size: 1.5rem;
     margin-bottom: 40px;
+    animation: slideUpText 2s ease forwards;
     opacity: 0;
-    animation: fadeInText 2s ease forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1.2s;
+    transform: translateY(40px);
 }
 
-@keyframes fadeInText {
-    0% { opacity: 0; transform: translateY(20px); }
+@keyframes slideUpText {
+    0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Dynamic, Attractive Button */
 .open-btn {
-    background-color: #008CBA;
-    padding: 12px 25px;
-    font-size: 1.1rem;
+    background: linear-gradient(45deg, #ff0055, #00ccff);
+    padding: 15px 35px;
+    font-size: 1.3rem;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
-    animation: pulseBtn 2.5s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.6), 0 0 20px rgba(0, 204, 255, 0.6);
+    transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    animation: pulseBtn 3s infinite ease-in-out;
 }
 
 .open-btn:hover {
-    background-color: #005f75;
-    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
     transform: scale(1.1);
+    background: linear-gradient(45deg, #00ccff, #ff0055);
+    box-shadow: 0 0 30px #ff0055, 0 0 40px #00ccff;
 }
 
 @keyframes pulseBtn {
-    0% { transform: scale(1); }
+    0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
 
-/* Floating animations for dynamic feel */
+/* Parallax floating effect for backgrounds */
 .intro-container::before, .intro-container::after {
-    animation: floatBackground 10s ease-in-out infinite;
+    animation: floatEffect 12s ease-in-out infinite;
 }
 
-@keyframes floatBackground {
+@keyframes floatEffect {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(20px); }
+    50% { transform: translateY(25px); }
 }
 
-/* Media Queries for Mobile Optimization */
+/* Media Queries for Smooth Mobile Optimization */
 @media (max-width: 768px) {
     .intro-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     .intro-content p {
@@ -139,7 +149,12 @@ body, html {
     }
 
     .open-btn {
-        padding: 10px 20px;
-        font-size: 1rem;
+        padding: 12px 30px;
+        font-size: 1.1rem;
     }
+}
+
+/* Smooth Scroll Effects for Page Transitions (if needed) */
+html {
+    scroll-behavior: smooth;
 }
