@@ -19,7 +19,7 @@ body, html {
     overflow: hidden;
 }
 
-/* Animated gradient overlay */
+/* Optimized animated gradient overlay */
 .intro-container::before {
     content: '';
     position: absolute;
@@ -27,8 +27,9 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(60deg, rgba(255,0,150,0.2), rgba(0,204,255,0.2));
-    animation: moveBackground 10s infinite alternate ease-in-out;
+    background: linear-gradient(60deg, rgba(255,0,150,0.15), rgba(0,204,255,0.15));
+    animation: moveBackground 15s infinite linear;
+    will-change: background-position; /* Improves performance by hinting browser */
 }
 
 @keyframes moveBackground {
@@ -36,7 +37,7 @@ body, html {
     100% { background-position: 100% 50%; }
 }
 
-/* RGB color animation overlay */
+/* Smoother and less intense RGB color animation */
 .intro-container::after {
     content: '';
     position: absolute;
@@ -46,8 +47,9 @@ body, html {
     bottom: 0;
     background: linear-gradient(45deg, red, blue, green, purple);
     background-size: 400% 400%;
-    opacity: 0.15;
-    animation: rgbFlow 8s infinite linear;
+    opacity: 0.12;
+    animation: rgbFlow 20s infinite linear; /* Slowed down to reduce strain */
+    will-change: background-position;
 }
 
 @keyframes rgbFlow {
@@ -55,7 +57,7 @@ body, html {
     100% { background-position: 100% 50%; }
 }
 
-/* Smooth Fade-In for Content */
+/* Fade-In effect for smoother appearance */
 .intro-content {
     text-align: center;
     color: white;
@@ -63,47 +65,44 @@ body, html {
     position: relative;
     animation: fadeIn 1.5s ease forwards;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(30px); }
+    0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Glowing Animated Title */
+/* Soft Glowing Animated Title (Reduced intensity) */
 .intro-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 0, 150, 0.7), 0 0 20px rgba(0, 204, 255, 0.7);
-    animation: glowText 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 0, 150, 0.4), 0 0 15px rgba(0, 204, 255, 0.4);
+    animation: glowText 6s ease-in-out infinite alternate; /* Reduced frequency */
+    will-change: text-shadow; /* Hinting to browser for better performance */
 }
 
 @keyframes glowText {
-    0%, 100% {
-        text-shadow: 0 0 20px #ff0055, 0 0 40px #ff0055, 0 0 60px #ff0055;
-    }
-    50% {
-        text-shadow: 0 0 30px #00ffcc, 0 0 50px #00ffcc, 0 0 70px #00ffcc;
-    }
+    0% { text-shadow: 0 0 15px #ff0055; }
+    100% { text-shadow: 0 0 25px #00ccff; }
 }
 
-/* Text animation - slight parallax feel */
+/* Text animation (less movement for smoother effect) */
 .intro-content p {
     font-size: 1.5rem;
     margin-bottom: 40px;
-    animation: slideUpText 2s ease forwards;
+    animation: slideUpText 1.5s ease forwards;
     opacity: 0;
-    animation-delay: 1.2s;
-    transform: translateY(40px);
+    animation-delay: 1s;
+    transform: translateY(20px);
 }
 
 @keyframes slideUpText {
-    0% { opacity: 0; transform: translateY(40px); }
+    0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Dynamic, Attractive Button */
+/* Optimized Button Animation */
 .open-btn {
     background: linear-gradient(45deg, #ff0055, #00ccff);
     padding: 15px 35px;
@@ -113,32 +112,26 @@ body, html {
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 0, 150, 0.6), 0 0 20px rgba(0, 204, 255, 0.6);
-    transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-    animation: pulseBtn 3s infinite ease-in-out;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .open-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: linear-gradient(45deg, #00ccff, #ff0055);
-    box-shadow: 0 0 30px #ff0055, 0 0 40px #00ccff;
 }
 
-@keyframes pulseBtn {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* Parallax floating effect for backgrounds */
+/* Parallax floating effect (Subtle) */
 .intro-container::before, .intro-container::after {
-    animation: floatEffect 12s ease-in-out infinite;
+    animation: floatEffect 10s ease-in-out infinite;
+    will-change: transform;
 }
 
 @keyframes floatEffect {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(25px); }
+    50% { transform: translateY(10px); }
 }
 
-/* Media Queries for Smooth Mobile Optimization */
+/* Media Queries for Mobile Optimization */
 @media (max-width: 768px) {
     .intro-content h1 {
         font-size: 2.3rem;
@@ -154,7 +147,7 @@ body, html {
     }
 }
 
-/* Smooth Scroll Effects for Page Transitions (if needed) */
+/* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
