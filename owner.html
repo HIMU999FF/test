@@ -104,19 +104,18 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease;
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             position: relative;
-            overflow: hidden;
+            animation: rgbGlow 1.5s infinite alternate; /* Added RGB Glow Animation */
         }
 
         .contact-info li:hover {
             transform: scale(1.05);
             background: rgba(255, 255, 255, 0.2);
-            animation: rgbHoverAnimation 1s infinite alternate; /* New RGB animation on hover */
         }
 
         .contact-info img {
@@ -198,28 +197,6 @@
             }
         }
 
-        /* RGB Animation for Contact Info on Hover */
-        @keyframes rgbHoverAnimation {
-            0% {
-                background: rgba(255, 0, 0, 0.1);
-            }
-            20% {
-                background: rgba(255, 127, 0, 0.1);
-            }
-            40% {
-                background: rgba(255, 255, 0, 0.1);
-            }
-            60% {
-                background: rgba(0, 255, 0, 0.1);
-            }
-            80% {
-                background: rgba(0, 127, 255, 0.1);
-            }
-            100% {
-                background: rgba(0, 0, 255, 0.1);
-            }
-        }
-
         /* Extra Styles for Engagement */
         .extra-info {
             margin-top: 20px;
@@ -292,65 +269,100 @@
         }
 
         /* Grid Layout for Contact Info */
-        .contact-info {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 15px;
         }
 
-        /* Additional Styles for Extra Info Section */
-        .extra-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* New RGB Glow Animation */
+        @keyframes rgbGlow {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 0, 60, 1), 0 0 10px rgba(255, 0, 60, 1), 0 0 15px rgba(255, 0, 60, 1);
+            }
+            25% {
+                box-shadow: 0 0 5px rgba(255, 204, 0, 1), 0 0 10px rgba(255, 204, 0, 1), 0 0 15px rgba(255, 204, 0, 1);
+            }
+            50% {
+                box-shadow: 0 0 5px rgba(51, 204, 255, 1), 0 0 10px rgba(51, 204, 255, 1), 0 0 15px rgba(51, 204, 255, 1);
+            }
+            75% {
+                box-shadow: 0 0 5px rgba(0, 255, 132, 1), 0 0 10px rgba(0, 255, 132, 1), 0 0 15px rgba(0, 255, 132, 1);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(255, 0, 247, 1), 0 0 10px rgba(255, 0, 247, 1), 0 0 15px rgba(255, 0, 247, 1);
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+        <h2>Redwan Ahmed</h2>
+        <p class="role">Developer | Creator | Innovator</p>
+    </header>
     <div class="owner-container">
-        <header>
-            <img src="profile.jpg" alt="Profile Image" class="profile-image">
-            <h2>Redwan Ahemed</h2>
-            <p class="role">Developer & Bot Owner</p>
-        </header>
-        
         <section class="bio">
-            <h3>About Me</h3>
-            <p>Hello! I'm a passionate developer specializing in bot creation and management. I love to explore new technologies and create engaging experiences for users.</p>
+            <h3>Biography</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
-
         <section class="contact-info">
             <h3>Contact Information</h3>
-            <ul>
+            <div class="contact-grid">
                 <li>
-                    <img src="phone-icon.png" alt="Phone Icon"> 
-                    <span>+880 1234 567890</span>
+                    <img src="email-icon.png" alt="Email">
+                    <span>redwan@example.com</span>
                 </li>
                 <li>
-                    <img src="email-icon.png" alt="Email Icon"> 
-                    <span>redwanahemed@example.com</span>
+                    <img src="phone-icon.png" alt="Phone">
+                    <span>+880 1234-567890</span>
                 </li>
                 <li>
-                    <img src="facebook-icon.png" alt="Facebook Icon"> 
-                    <span><a href="https://www.facebook.com/99.6T9.HIMU.6T9.1?mibextid=ZbWKwL" target="_blank" style="color: inherit; text-decoration: none;">Facebook Profile</a></span>
+                    <img src="facebook-icon.png" alt="Facebook">
+                    <span><a href="https://facebook.com/yourprofile" style="color: inherit; text-decoration: none;">Facebook</a></span>
                 </li>
                 <li>
-                    <img src="github-icon.png" alt="GitHub Icon"> 
-                    <span><a href="https://github.com/yourusername" target="_blank" style="color: inherit; text-decoration: none;">GitHub Profile</a></span>
+                    <img src="twitter-icon.png" alt="Twitter">
+                    <span><a href="https://twitter.com/yourprofile" style="color: inherit; text-decoration: none;">Twitter</a></span>
                 </li>
-            </ul>
+            </div>
         </section>
-
-        <div class="extra-info">
-            <h4>Fun Facts</h4>
-            <p>I enjoy listening to music over movies.</p>
-            <p>My favorite drink is 'Magic'.</p>
-            <p>I once broke someone's heart, but it was a learning experience!</p>
-        </div>
-
-        <footer>
-            <p>&copy; 2024 Redwan Ahemed. All rights reserved.</p>
-        </footer>
+        <section class="extra-info">
+            <h4>Additional Information</h4>
+            <p>Passionate about technology and innovation. Always looking for new challenges and opportunities to learn.</p>
+        </section>
+        <button class="btn">Connect with Me</button>
     </div>
+    <footer>
+        <p>&copy; 2024 Redwan Ahmed. All rights reserved.</p>
+    </footer>
+    <script>
+        // Back to top button functionality
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.innerHTML = 'Back to Top';
+        backToTopBtn.classList.add('btn');
+        backToTopBtn.style.position = 'fixed';
+        backToTopBtn.style.bottom = '20px';
+        backToTopBtn.style.right = '20px';
+        backToTopBtn.style.display = 'none';
+        document.body.appendChild(backToTopBtn);
+
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll back to top
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
